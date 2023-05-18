@@ -5,20 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model
+class Part extends Model
 {
-
-
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'registration_number',
-        'is_registered',
+        'serial_number',
+        'car_id',
     ];
 
-    public function parts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function car(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasMany(Part::class);
+        return $this->belongsTo(Car::class);
     }
 }

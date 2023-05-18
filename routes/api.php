@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('cars', \App\Http\Controllers\API\CarController::class);
+Route::apiResource('parts', \App\Http\Controllers\API\PartController::class);

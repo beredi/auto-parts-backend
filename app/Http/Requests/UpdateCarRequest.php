@@ -14,9 +14,9 @@ class UpdateCarRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
             'registration_number' => 'required_if:is_registered,true',
             'is_registered' => 'boolean',
+            'name' => 'sometimes|string',
         ];
     }
 }
