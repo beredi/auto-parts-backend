@@ -20,7 +20,7 @@ class PartController extends Controller
      */
     public function index(): PartCollection
     {
-        $parts = Part::all();
+        $parts = Part::with('car')->get();
 
         return new PartCollection($parts);
     }

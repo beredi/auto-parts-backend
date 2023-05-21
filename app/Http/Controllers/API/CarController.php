@@ -20,7 +20,7 @@ class CarController extends Controller
      */
     public function index(): CarCollection
     {
-        $cars = Car::paginate(10); // Adjust the pagination limit as needed
+        $cars = Car::with('parts')->get(); // Adjust the pagination limit as needed
 
         return new CarCollection($cars);
     }
