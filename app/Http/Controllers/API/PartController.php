@@ -46,6 +46,8 @@ class PartController extends Controller
      */
     public function show(Part $part): PartResource
     {
+        $part->load('car'); // Eager load the 'car' relationship
+
         return new PartResource($part);
     }
 

@@ -46,6 +46,8 @@ class CarController extends Controller
      */
     public function show(Car $car): CarResource
     {
+        $car->load('parts'); // Eager load the 'parts' relationship
+
         return new CarResource($car);
     }
 
